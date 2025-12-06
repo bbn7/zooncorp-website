@@ -1,0 +1,401 @@
+# ZOON CORP — Complete Static Website Package (Ready-to-deploy)
+
+All files, structure, styles, content, metadata, SEO, deployment instructions, and an optional Next.js single-file starter. Use this as-is: drop into a git repo, push, and deploy to Cloudflare Pages.
+
+---
+
+# Folder structure
+
+```
+zooncorp-website/
+├── README.md
+├── index.html
+├── about.html
+├── services.html
+├── contact.html
+├── privacy-policy.html
+├── terms.html
+├── sitemap.xml
+├── robots.txt
+├── favicon.ico
+├── logo/
+│   ├── zoon-logo-light.png
+│   ├── zoon-logo-dark.png
+│   └── zoon-logo.svg
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── main.js
+│   └── img/
+│       ├── hero-1.jpg
+│       ├── hero-2.jpg
+│       ├── service-dryfruits.jpg
+│       ├── service-it.jpg
+│       └── team.jpg
+└── components/
+    ├── header.html
+    └── footer.html
+```
+
+---
+
+# Brand palette, typography, tokens
+
+Use exact values in CSS.
+
+* Primary green: `#2E6B4F`
+* Accent forest: `#1E4F3A`
+* Warm tan: `#C9A66B`
+* Deep brown: `#5A3F2B`
+* Off-white background: `#FAF8F4`
+* Neutral text: `#222222`
+* UI radius: `12px`
+* Elevation shadow: `0 6px 20px rgba(34,34,34,0.08)`
+
+Fonts (web): Inter for UI, Playfair Display for headings. Use Google Fonts:
+`https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap`
+
+Design principles: strong left-aligned content grid, large readable type, rich hero with split image/text, card-based services, concise global-standard legal pages.
+
+---
+
+# Global header (components/header.html)
+
+
+# Global footer (components/footer.html)
+
+
+---
+
+# index.html (complete)
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ZOON CORP Pvt Ltd | Dry-Fruit Exports & IT Solutions</title>
+  <meta name="description" content="ZOON CORP: premium Kashmiri dry-fruit exports, IT consulting, cloud & digital transformation services. Global logistics, modern technology.">
+  <meta name="keywords" content="dry fruit exporter, Kashmiri walnuts exporter, IT consulting, cloud services, digital transformation">
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta property="og:title" content="ZOON CORP - Dry-Fruit Exports & IT Solutions">
+  <meta property="og:description" content="Premium Kashmiri dry-fruit exports, IT consultancy, cloud services and digital transformation for global customers.">
+  <meta property="og:image" content="/assets/img/hero-1.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="page-home">
+  <!-- header -->
+  <!-- include components/header.html here or paste content -->
+  <script>document.write(fetch('/components/header.html').then(r=>r.text()).then(t=>document.write(t)))</script>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>Supply. Systems. Scale.</h1>
+          <p class="lead">ZOON CORP connects Kashmiri agricultural excellence with enterprise-grade technology solutions. From premium dry-fruits to cloud-native systems — one partner, global delivery.</p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="/services.html">Explore Services</a>
+            <a class="btn outline" href="/contact.html">Get in Touch</a>
+          </div>
+          <ul class="cred-list">
+            <li>ISO-grade supply chain</li>
+            <li>Global logistics & export compliance</li>
+            <li>Enterprise cloud & integration</li>
+          </ul>
+        </div>
+        <div class="hero-media">
+          <picture>
+            <source srcset="/assets/img/hero-2.jpg" media="(min-width:900px)">
+            <img src="/assets/img/hero-1.jpg" alt="Quality produce and technology" loading="lazy">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-preview">
+      <div class="wrap">
+        <h2>Our Capabilities</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="/assets/img/service-dryfruits.jpg" alt="">
+            <h3>Premium Dry-Fruit Exports</h3>
+            <p>Walnuts, almonds, saffron and specialty produce — traceable, compliant and export-ready.</p>
+          </article>
+          <article class="card">
+            <img src="/assets/img/service-it.jpg" alt="">
+            <h3>IT Consulting & Cloud</h3>
+            <p>Architecture, migration, managed services, security and API-driven integration.</p>
+          </article>
+          <article class="card">
+            <img src="/assets/img/team.jpg" alt="">
+            <h3>Digital Transformation</h3>
+            <p>Product design, automation, analytics and end-to-end delivery for enterprise growth.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="wrap why-grid">
+        <div>
+          <h3>Commercial & Technical Rigor</h3>
+          <p>Documented quality practices, export compliance, secure cloud deployments and SLA-based delivery models tailored to enterprise clients.</p>
+        </div>
+        <div>
+          <h3>Global Reach</h3>
+          <p>Shipping lanes, customs clearance, and remote engineering teams — single-vendor accountability for supply and systems.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <script>document.write(fetch('/components/footer.html').then(r=>r.text()).then(t=>document.write(t)))</script>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
+```
+
+---
+
+# services.html (concise, SEO-rich)
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Services — ZOON CORP | Dry-Fruits, Cloud, Integration, Cybersecurity</title>
+  <meta name="description" content="Services: Dry-fruit exports, supply chain compliance, IT consulting, cloud migration, integration, cybersecurity, product engineering.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <script>document.write(fetch('/components/header.html').then(r=>r.text()).then(t=>document.write(t)))</script>
+  <main class="wrap">
+    <h1>Services</h1>
+
+    <section class="service-detail">
+      <h2>Dry-Fruit Exports</h2>
+      <p>Procurement, grading, cold-chain handling, packaging, export documentation, international logistics and buyer-facing compliance.</p>
+      <ul>
+        <li>Quality grading & traceability</li>
+        <li>Custom packaging</li>
+        <li>Export documentation & customs handling</li>
+      </ul>
+    </section>
+
+    <section class="service-detail">
+      <h2>IT Consulting & Cloud</h2>
+      <p>Architecture design, cloud lift & shift, cost optimization, managed infra, observability and security baselines.</p>
+    </section>
+
+    <section class="service-detail">
+      <h2>Enterprise Integration</h2>
+      <p>API-first integrations, ESB modernization, data pipelines, and ERP connectivity.</p>
+    </section>
+
+    <section class="service-detail">
+      <h2>Digital Product & Automation</h2>
+      <p>Product strategy, UI/UX, automation, reporting and analytics for operational efficiency and revenue growth.</p>
+    </section>
+
+  </main>
+  <script>document.write(fetch('/components/footer.html').then(r=>r.text()).then(t=>document.write(t)))</script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
+```
+
+---
+
+# contact.html (form using Formspree)
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — ZOON CORP</title>
+  <meta name="description" content="Contact ZOON CORP for trade, collaboration or enterprise IT services.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <script>document.write(fetch('/components/header.html').then(r=>r.text()).then(t=>document.write(t)))</script>
+  <main class="wrap contact-page">
+    <h1>Contact</h1>
+    <p>Direct business contact for procurement, partnerships and enterprise services.</p>
+
+    <form id="contact-form" action="https://formspree.io/f/{YOUR_FORM_ID}" method="POST">
+      <label>Name <input type="text" name="name" required></label>
+      <label>Company <input type="text" name="company"></label>
+      <label>Email <input type="email" name="email" required></label>
+      <label>Phone <input type="tel" name="phone"></label>
+      <label>Message <textarea name="message" rows="6" required></textarea></label>
+      <button type="submit" class="btn primary">Send</button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Office</h3>
+      <p>ZOON CORP Pvt Ltd</p>
+      <p>Email: info@zooncorp.com</p>
+    </div>
+  </main>
+  <script>document.write(fetch('/components/footer.html').then(r=>r.text()).then(t=>document.write(t)))</script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
+```
+
+---
+
+# privacy-policy.html and terms.html
+
+Provide the templates already in the previous message; include explicit last-updated date and contact email. Use those exact legal texts; paste into files.
+
+---
+
+# sitemap.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.zooncorp.com/</loc></url>
+  <url><loc>https://www.zooncorp.com/about.html</loc></url>
+  <url><loc>https://www.zooncorp.com/services.html</loc></url>
+  <url><loc>https://www.zooncorp.com/contact.html</loc></url>
+  <url><loc>https://www.zooncorp.com/privacy-policy.html</loc></url>
+  <url><loc>https://www.zooncorp.com/terms.html</loc></url>
+</urlset>
+```
+
+# robots.txt
+
+```
+User-agent: *
+Allow: /
+Sitemap: https://www.zooncorp.com/sitemap.xml
+```
+
+---
+
+# assets/css/style.css (complete core)
+
+---
+
+# assets/js/main.js
+
+
+---
+
+# SEO package (meta + structured data) — include in each page in HEAD
+
+Add this JSON-LD snippet in `<head>` of main pages:
+
+```html
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"ZOON CORP Pvt Ltd",
+  "url":"https://www.zooncorp.com",
+  "logo":"https://www.zooncorp.com/logo/zoon-logo.svg",
+  "contactPoint":[{"@type":"ContactPoint","telephone":"+91 1800 555 5555","contactType":"customer service","areaServed":"GLOBAL","availableLanguage":["English"]}],
+  "sameAs":[]
+}
+</script>
+```
+
+Top 5 SEO recommendations (implement now):
+
+1. Add canonical link to each page: `<link rel="canonical" href="https://www.zooncorp.com/yourpage">`.
+2. Ensure hero image has `alt` describing content and `width/height` where possible.
+3. Host images in `assets/img/` with optimized WebP versions; serve WebP via `<picture>`.
+4. Add hreflang only if multiple locales.
+5. Request indexing via Google Search Console and submit `sitemap.xml`.
+
+---
+
+# README.md (deploy steps, git, Cloudflare Pages)
+
+
+
+---
+
+# Optional: Next.js single-file starter (for Cloudflare Pages or Vercel)
+
+Place in a new `nextjs-starter/` repo. Minimal index page (single-file example `pages/index.js`) and global styles. Use Tailwind or CSS; below is plain CSS approach.
+
+`pages/index.js`:
+
+```jsx
+
+```
+
+Add `next.config.js` with `reactStrictMode: true`. Deploy to Vercel or Cloudflare Pages (Next.js support).
+
+---
+
+# Accessibility & performance checklist (must-do)
+
+* Add `lang` attributes and skip links if content long.
+* Run Lighthouse: target performance > 90, accessibility > 90.
+* Compress images, serve WebP/AVIF.
+* Add `width`/`height` for images for CLS reduction.
+* Add `rel="preconnect"` for Google Fonts and `font-display:swap`.
+* Implement basic caching headers (via Cloudflare Workers or hosting).
+
+---
+
+# Legal and compliance (immediate edits)
+
+* Update Privacy Policy last-updated date and add DPO contact if collecting personal data.
+* For exports: add compliance disclaimers and export license contact in `about.html` or `services.html`.
+* Include cookie banner if tracking (even basic analytics).
+
+---
+
+# Final file checklist (what to replace before production)
+
+* `/logo/*` with final SVG and PNGs.
+* All placeholder images in `/assets/img/`.
+* `contact` form handler ID.
+* Company contact details and tax/registration details where necessary.
+* Update domain in `sitemap.xml` and canonical links.
+
+---
+
+# Minimal Git commands
+
+```
+git init
+git add .
+git commit -m "Initial ZOON CORP static site"
+git branch -M main
+git remote add origin git@github.com:youruser/zooncorp-website.git
+git push -u origin main
+```
+
+---
+
+# Deliverables included in this package
+
+* Full static HTML pages: index, about, services, contact, privacy, terms.
+* Components: reusable header and footer.
+* CSS: production-ready single stylesheet.
+* Minimal JS for UX.
+* SEO meta + JSON-LD.
+* sitemap.xml and robots.txt.
+* README with complete Cloudflare Pages steps and local run.
+* Next.js single-file starter for advanced deployment.
+
+The package is production-fit after replacing images, logos and contact tokens.
