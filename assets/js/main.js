@@ -229,22 +229,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroImage) {
       // Define seasonal image mappings (you would need to add these images)
       const seasonalImages = {
-        spring: '/assets/img/hero-spring.jpg',
-        summer: '/assets/img/hero-summer.jpg',
-        autumn: '/assets/img/hero-autumn.jpg',
-        winter: '/assets/img/hero-1.jpg' // default winter image
+        spring: 'assets/img/hero-spring.jpg',
+        summer: 'assets/img/hero-summer.jpg',
+        autumn: 'assets/img/hero-autumn.jpg',
+        winter: 'assets/img/hero-1.jpg' // default winter image
       };
 
       const seasonalImage = seasonalImages[season];
-      if (seasonalImage && heroImage.src !== window.location.origin + seasonalImage) {
-        // Add fade transition
-        heroImage.style.transition = 'opacity 1s ease-in-out';
-        heroImage.style.opacity = '0';
+      if (seasonalImage) {
+        // Resolve to an absolute URL based on the current document base
+        const seasonalURL = new URL(seasonalImage, document.baseURI).href;
 
-        setTimeout(() => {
-          heroImage.src = seasonalImage;
-          heroImage.style.opacity = '1';
-        }, 500);
+        if (heroImage.src !== seasonalURL) {
+          // Add fade transition
+          heroImage.style.transition = 'opacity 1s ease-in-out';
+          heroImage.style.opacity = '0';
+
+          setTimeout(() => {
+            heroImage.src = seasonalURL;
+            heroImage.style.opacity = '1';
+          }, 500);
+        }
       }
     }
 
